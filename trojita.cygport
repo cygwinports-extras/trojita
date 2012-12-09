@@ -1,0 +1,16 @@
+inherit qt4-qmake
+
+NAME="trojita"
+VERSION=0.3.90
+RELEASE=1
+CATEGORY="Mail"
+SUMMARY="Qt IMAP email client"
+DESCRIPTION="The goal of Trojita is to create a fast client that works well
+even over slow or high-latency networks which often break, while not holding
+you back when you sit on a good connection. Trojita doesn't have any problems
+opening huge mailboxes with hundreds of thousand of messages, and fits well
+into modern desktop environments."
+HOMEPAGE="http://trojita.flaska.net/"
+SRC_URI="mirror://sourceforge/trojita/${NAME}-${VERSION}.tar.bz2"
+
+CYGQMAKE4_ARGS="PREFIX=/usr"
