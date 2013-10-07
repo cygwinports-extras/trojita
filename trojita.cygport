@@ -1,7 +1,7 @@
-inherit qt4-qmake
+inherit qt4-cmake
 
 NAME="trojita"
-VERSION=0.3.90
+VERSION=0.3.96
 RELEASE=1
 CATEGORY="Mail"
 SUMMARY="Qt IMAP email client"
@@ -13,4 +13,4 @@ into modern desktop environments."
 HOMEPAGE="http://trojita.flaska.net/"
 SRC_URI="mirror://sourceforge/trojita/${NAME}-${VERSION}.tar.bz2"
 
-CYGQMAKE4_ARGS="PREFIX=/usr"
+CYGCMAKE_ARGS="-DWITH_SHARED_PLUGINS=OFF"
