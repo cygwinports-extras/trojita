@@ -1,7 +1,7 @@
-inherit qt4-cmake
+inherit qt5 cmake
 
 NAME="trojita"
-VERSION=0.3.96
+VERSION=0.7
 RELEASE=1
 CATEGORY="Mail"
 SUMMARY="Qt IMAP email client"
@@ -11,6 +11,12 @@ you back when you sit on a good connection. Trojita doesn't have any problems
 opening huge mailboxes with hundreds of thousand of messages, and fits well
 into modern desktop environments."
 HOMEPAGE="http://trojita.flaska.net/"
-SRC_URI="mirror://sourceforge/trojita/${NAME}-${VERSION}.tar.bz2"
+SRC_URI="mirror://sourceforge/trojita/trojita-${VERSION}.tar.xz"
+PATCH_URI="
+	0.7-ftm.patch
+	0.7-gnupg1.patch
+	0.7-RTLD_NEXT-hack.patch
+	0.7-static-plugins.patch
+"
 
 CYGCMAKE_ARGS="-DWITH_SHARED_PLUGINS=OFF"

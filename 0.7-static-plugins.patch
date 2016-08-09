@@ -1,0 +1,17 @@
+--- origsrc/trojita-0.7/CMakeLists.txt	2016-06-15 02:17:23.000000000 -0500
++++ src/trojita-0.7/CMakeLists.txt	2016-08-09 02:12:34.218302300 -0500
+@@ -641,10 +641,10 @@ endif()
+ 
+ ## QtKeyChain plugin
+ if(WITH_QTKEYCHAIN_PLUGIN)
+-    trojita_add_plugin(trojita_plugin_QtKeychainPasswordPlugin WITH_QTKEYCHAIN_PLUGIN src/Plugins/QtKeyChain/QtKeyChainPassword.cpp)
+-    qt5_use_modules(trojita_plugin_QtKeychainPasswordPlugin Core DBus)
+-    target_link_libraries(trojita_plugin_QtKeychainPasswordPlugin ${QTKEYCHAIN_LIBRARIES})
+-    set_property(TARGET trojita_plugin_QtKeychainPasswordPlugin APPEND PROPERTY INCLUDE_DIRECTORIES ${QTKEYCHAIN_INCLUDE_DIRS})
++    trojita_add_plugin(trojita_plugin_QtKeyChainPasswordPlugin WITH_QTKEYCHAIN_PLUGIN src/Plugins/QtKeyChain/QtKeyChainPassword.cpp)
++    qt5_use_modules(trojita_plugin_QtKeyChainPasswordPlugin Core DBus)
++    target_link_libraries(trojita_plugin_QtKeyChainPasswordPlugin ${QTKEYCHAIN_LIBRARIES})
++    set_property(TARGET trojita_plugin_QtKeyChainPasswordPlugin APPEND PROPERTY INCLUDE_DIRECTORIES ${QTKEYCHAIN_INCLUDE_DIRS})
+ endif()
+ 
+ ## AbookAddressbook plugin

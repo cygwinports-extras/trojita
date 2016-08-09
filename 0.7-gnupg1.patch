@@ -1,0 +1,57 @@
+--- origsrc/trojita-0.7/tests/Cryptography/batch-keygen	2016-06-15 02:17:23.000000000 -0500
++++ src/trojita-0.7/tests/Cryptography/batch-keygen	2016-08-09 02:29:08.917734100 -0500
+@@ -24,8 +24,8 @@
+ %no-protection
+ 
+ %echo Generating key for valid encryptions and signatures
+-Key-Type: default
+-Subkey-Type: default
++Key-Type: RSA
++Subkey-Type: RSA
+ Key-Length: 1024
+ Subkey-Length: 1024
+ Name-Real: Valid
+@@ -34,8 +34,8 @@ Expire-Date: 0
+ 
+ %commit
+ %echo Generating key for expired encryptions and signatures
+-Key-Type: default
+-Subkey-Type: default
++Key-Type: RSA
++Subkey-Type: RSA
+ Key-Length: 1024
+ Subkey-Length: 1024
+ Name-Real: Expired
+@@ -45,8 +45,8 @@ Expire-Date: 0
+ 
+ %commit
+ %echo Generating key that will be deleted after message generation
+-Key-Type: default
+-Subkey-Type: default
++Key-Type: RSA
++Subkey-Type: RSA
+ Key-Length: 1024
+ Subkey-Length: 1024
+ Name-Real: Unknown
+@@ -55,8 +55,8 @@ Expire-Date: 0
+ 
+ %commit
+ %echo Generating a key which will be used for signature verification, where the private key will be removed
+-Key-Type: default
+-Subkey-Type: default
++Key-Type: RSA
++Subkey-Type: RSA
+ Key-Length: 1024
+ Subkey-Length: 1024
+ Name-Real: Some Signer
+--- origsrc/trojita-0.7/tests/Cryptography/keygen.sh	2016-06-15 02:17:23.000000000 -0500
++++ src/trojita-0.7/tests/Cryptography/keygen.sh	2016-08-09 02:04:55.655992900 -0500
+@@ -23,7 +23,7 @@
+ 
+ set -e
+ 
+-GPG=$(gpgconf --check-programs | grep "^gpg:" | cut -d : -f 3)
++GPG=/usr/bin/gpg # $(gpgconf --check-programs | grep "^gpg:" | cut -d : -f 3)
+ 
+ SRCDIR=$1
+ 

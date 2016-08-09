@@ -1,0 +1,20 @@
+--- origsrc/trojita-0.7/src/Gui/main.cpp	2016-06-15 02:17:23.000000000 -0500
++++ src/trojita-0.7/src/Gui/main.cpp	2016-08-09 00:28:46.695547600 -0500
+@@ -20,6 +20,7 @@
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
++#define _POSIX_C_SOURCE 200112L	/* unsetenv */
+ #include <QApplication>
+ #include <QFile>
+ #include <QLibraryInfo>
+--- origsrc/trojita-0.7/src/Imap/Parser/Command.cpp	2016-06-15 02:17:23.000000000 -0500
++++ src/trojita-0.7/src/Imap/Parser/Command.cpp	2016-08-09 00:24:02.468200100 -0500
+@@ -19,6 +19,7 @@
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
++#define _XOPEN_SOURCE	/* isascii */
+ #include <ctype.h>
+ #include <QStringList>
+ #include "Command.h"
